@@ -1,0 +1,74 @@
+<html> 
+   <head>
+         <title> Goliath </title>
+         <meta charset="utf-8">
+         <link rel="stylesheet" href="style.css" 
+          
+   </head>
+   <body>
+      <div class="musicBox">
+         <div >
+         <p> Pretty Please Press Play </p>
+         <audio controls loop src="music/LuckyLove.mp3">
+         
+      </div>
+      <div class="box">
+         <div >
+
+            <h1 class = "header_text"> Howdy David ;) </h1>
+               <h1>Let me tell you secret... </h1>
+
+               <button class="btn" onclick="showLove()"> Click Me ;) </button>
+               <p id="loveMessage" style="display: none;"> 
+                  I find myself at a loss for words each time I try to express the depth of my feelings for you. <br></br>
+                  I really really really like you David. I don't know what you have done to me but thoughts of you fill my mind. <br></br>
+                  It's more than just a passing infatuation;
+                  Your presence fills my thoughts, <br></br> your laughter echoes in my mind, and your smile disarms me.
+                  It's the way you view the world with a perspective that is uniquely your own. Your outlook on life is refreshing.<br></br>
+                  You possess a patience and understanding that is rare and beautiful, and it's one of the many reasons why I admire you so deeply. I'm enamoured with your mind and soul. <br></br>David, you have a heart of gold. The kindness and compassion you show towards the people you care about is endearing.<br></br>
+                  And then there's your passion for teaching and sharing knowledge. It's infectious, David.<br></br>
+                  The way you light up when you're discussing something you're passionate about—it's like watching the stars you sometimes go on about.<br></br> Your sense of fearlessness and adventure makes it exciting to be around you. I've told you this once and will tell you again but you are a truly unique person. <br></br>I have never met anyone like you, you're real special. <br></br>
+                  It's hard not to fall in love with you.</p>
+            <script>
+            function showLove() {
+               var loveMessage = document.getElementById("loveMessage");
+               loveMessage.style.display = "block";
+                  }
+            </script>
+
+            <h2> Now let me ask you a question :) </h2>
+
+            <button class="btn" onclick="showLove2()"> Click Me Again  ;) </button>
+
+            <h2 id = "Valentine?" style="display: none;"> Will you be my Valentine? </h2>
+            <img src="images/CowboyFrog.png" alt = "cowboyfrog" id="frog_pic" style = "display: none;">
+
+               <button class="btn" id = "yesButton" style="display: none;" onclick="nextPage()">Yes</button>
+               <button class="btn" id="noButton" style="display: none;" onmouseover="moveButton()" onclick="moveButton()">No</button>
+               <script>
+                   function nextPage() {
+                       window.location.href = "yes.html";
+                   }
+                   function moveButton() {
+                       var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+                       var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+                       document.getElementById('noButton').style.left = `${x}px`;
+                       document.getElementById('noButton').style.top = `${y}px`;
+                   }
+               </script> 
+            <script>
+               function showLove2() {
+                  var loveMessage = document.getElementById("Valentine?");
+                  loveMessage.style.display = "block";
+                  var loveMessage2 = document.getElementById("frog_pic");
+                  loveMessage2.style.display = "block";
+                  var loveMessage3 = document.getElementById("yesButton");
+                  loveMessage3.style.display = "block";
+                  var loveMessage3 = document.getElementById("noButton");
+                  loveMessage3.style.display = "block";
+                     }
+            </script>
+        </div>
+      </div>
+    </body>
+      </html>
