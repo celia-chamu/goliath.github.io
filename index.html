@@ -7,7 +7,7 @@
    </head>
    <body>
       <div class="musicBox">
-         <div >
+      <div>
          <p> Pretty Please Press Play </p>
          <audio controls loop src="music/LuckyLove.mp3">
          
@@ -41,7 +41,16 @@
             <button class="btn" onclick="showLove2()"> Click Me Again  ;) </button>
 
             <h2 id = "Valentine?" style="display: none;"> Will you be my Valentine? </h2>
-            <img src="images/CowboyFrog.png" alt = "cowboyfrog" id="frog_pic" style = "display: none;">
+
+            <div> 
+               <img src="images/CowboyFrog.png" id="frog_pic" style = "display: none;" onclick="DoSomething();">
+           </div>
+
+           <script>
+               function DoSomething(){
+                  window.location.href = "valentine.html";
+               }
+           </script>
 
                <button class="btn" id = "yesButton" style="display: none;" onclick="nextPage()">Yes</button>
                <button class="btn" id="noButton" style="display: none;" onmouseover="moveButton()" onclick="moveButton()">No</button>
