@@ -23,17 +23,6 @@ body {
   background-color: #123456;
 }
 
-#noButton {
-  position: absolute;
-  margin-left: 150px;
-  transition: 0.5s;
-}
-
-#yesButton {
-  position: absolute;
-  margin-right: 150px;
-}
-
 .header_text {
   font-family: "Nunito";
   font-size: 40px;
@@ -41,7 +30,17 @@ body {
   color: beige;
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 50px;
+}
+
+.music-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .buttons {
@@ -57,10 +56,7 @@ body {
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
-}
-.button-container button {
-  margin: 0 20px;
+  margin-top: 100px;
 }
 
 .btn {
@@ -77,6 +73,7 @@ body {
   border-radius: 12px;
   transition: background-color 0.3s ease;
 }
+
 .fake-ad-container {
   position: fixed;
   top: 50%;
