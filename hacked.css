@@ -1,0 +1,58 @@
+#hackBox {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color:black;
+  padding: 20px;
+  font-family: "Nunito";
+  border: 2px solid #03f738;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color:#03f738;
+  text-align: center
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+}
+
+#text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#text-container-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#text {
+  font-size: 26px;
+  font-family: "Nunito";
+  color: #03f738;
+  white-space: nowrap;
+  animation: typewriter 0.5s steps(1) infinite;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+}

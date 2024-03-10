@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hacked!</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./hacked.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #text-container {
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <audio controls autoplay loop hidden="">
+      <source src="music/FaxMachineSound.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="text-container">
+      <p id="text"></p>
+      <div id="hackBox">
+        <h2>You got hacked!</h2>
+      </div>
+    </div>
+    <script>
+      const textElement = document.getElementById("text");
+      const textContainer = document.getElementById("text-container");
+      const text = "1010".repeat(Math.ceil(window.innerWidth / 20));
+      const textLength = text.length;
+
+      function typeWriter() {
+        if (
+          textContainer.getBoundingClientRect().width >
+          window.innerWidth * 0.9
+        ) {
+          textContainer.style.width = "98vw";
+        }
+        if (
+          textContainer.getBoundingClientRect().width <
+          window.innerWidth * 0.9
+        ) {
+          textContainer.style.width = "auto";
+        }
+        let index = 0;
+        let height = 0;
+        const typingInterval = setInterval(() => {
+          if (height === 20) {
+            clearInterval(typingInterval);
+            showHackAlert();
+            return;
+          }
+          if (index === textLength) {
+            textElement.innerHTML += "<br><br/>";
+            index = 0;
+            height++;
+          }
+          textElement.innerHTML += text.charAt(index);
+          index++;
+        }, 5);
+      }
+      typeWriter();
+
+      function showHackAlert() {
+        var hackBox = document.getElementById("hackBox");
+        hackBox.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="404.css" />
     <meta charset="utf-8" />
-
-    <title>Goliath</title>
+    <title>ERROR</title>
+    <style>
+      .centered-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    </style>
     <script type="text/javascript">
       const path = window.location.pathname.substring(1).toLowerCase();
-
       const redirect = redirects[path];
       if (redirect) {
         window.location.replace(redirect);
@@ -16,6 +23,15 @@
     </script>
   </head>
   <body>
-    <h1> 404 Not Found, I fucked Up My Bad!! </h1>
+    <div class="centered-container">
+      <h1>404 Not Found! I fucked up OOPS</h1>
+      <button id="goback-btn" onclick="goBack()">Go Back</button>
+      <script>
+        function goBack() {
+          window.history.back();
+        }
+      </script>
+    </div>
+    <img src="images/shaqFace.png" id="shaq_pic" />
   </body>
 </html>
