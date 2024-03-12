@@ -1,14 +1,35 @@
+@import url("https://fonts.cdnfonts.com/css/western");
+
+:root {
+  --gradient: linear-gradient(90deg, rgb(17, 23, 58) 0%, rgb(58, 85, 148) 90%);
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  70% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
 h1 {
   color: beige;
+  font-family: "Western", sans-serif;
   font-size: large;
 }
 h2 {
   color: beige;
+  font-family: "Western", sans-serif;
   font-size: larger;
 }
 
 p {
   color: white;
+  font-family: "Western", sans-serif;
   font-size: medium;
 }
 
@@ -20,12 +41,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #123456;
+  background-image: var(--gradient);
+  background-size: 400%;
+  animation: bg-animation 30s infinite;
 }
 
 .header_text {
-  font-family: "Nunito";
-  font-size: 40px;
+  font-family: "Western", sans-serif;
+  font-size: 45px;
   font-weight: bold;
   color: beige;
   text-align: center;
@@ -60,18 +83,40 @@ body {
 }
 
 .btn {
-  font-family: "Nunito";
-  background-color: #4a251b;
+  font-family: "Western", sans-serif;
+  background-color: rgb(58, 85, 148);
   color: beige;
-  padding: 15px 32px;
+  padding: 10px 32px;
   text-align: center;
   display: inline-block;
-  font-size: 16px;
+  font-size: 25px;
   margin: 4px 2px;
-  cursor: pointer;
+  outline: none;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(0, 0, 0),
+    rgb(58, 85, 148)
+  );
   border: none;
-  border-radius: 12px;
-  transition: background-color 0.3s ease;
+  border-radius: 40px;
+  box-shadow: 0px 4px 0px rgb(0, 0, 0);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 0px rgb(0, 0, 0);
+}
+
+.btn:active {
+  transform: translateY(0px);
+  box-shadow: none;
+  background-image: linear-gradient(
+    to bottom right,
+    gb(58, 85, 148),
+    rgb(0, 0, 0)
+  );
 }
 
 .fake-ad-container {

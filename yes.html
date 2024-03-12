@@ -1,25 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SUBLIME</title>
+    <title>SUBLIME!</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="./yesStyle.css" />
   </head>
   <body>
+    <div class="star-field"></div>
+    <script src="js/twinklingStars.js"></script>
     <div class="container">
-      <audio controls autoplay hidden="">
+      <audio controls autoplay hidden="" class="exit">
         <source src="music/WeakForYourLove.mp3" type="audio/mpeg" />
       </audio>
-      <div class="content_container">
-        <div>
-          <h1 class="header_text">YEEEHAWWWW!!</h1>
+      <div class="card">
+        <audio src="music/whiplash.mp3" class="enter"></audio>
+        <div class="content">
+          <div class="back">
+            <div class="back-content">
+              <img src="images/CowboyShooter.jpg" />
+              <p>I'll see you at sundown <3</p>
+            </div>
+          </div>
+          <div class="front">
+            <div class="front-content">
+              <h1 class="card-header">Cowboy Shooter</h1>
+              <div class="card-body">
+                <p class="card-text">
+                  A cowboy shooter is a classic cocktail that is made with
+                  whiskey, coffee liqueur, and cream. It is a delicious and
+                  creamy drink that is perfect for sipping on a cold winter
+                  night.
+                </p>
+                <div class="card-ingredients">
+                  <h3>Ingredients</h3>
+                  <ul>
+                    <li>1 oz whiskey</li>
+                    <li>1 oz coffee liqueur</li>
+                    <li>1 oz cream</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="pic_container">
-          <img src="images/CowboyShooter.jpg" />
-        </div>
-        <h2 class="sub_text">I'll see you at sundown <3</h2>
       </div>
     </div>
-    <script src="js/app.js"></script>
+    <script src="js/whiplash.js"></script>
   </body>
 </html>
