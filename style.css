@@ -1,7 +1,17 @@
 @import url("https://fonts.cdnfonts.com/css/western");
 
+
 :root {
   --gradient: linear-gradient(90deg, rgb(17, 23, 58) 0%, rgb(58, 85, 148) 90%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: var(--gradient);
+  background-size: 400%;
+  animation: bg-animation 30s infinite;
 }
 
 @keyframes bg-animation {
@@ -21,6 +31,7 @@ h1 {
   font-family: "Western", sans-serif;
   font-size: large;
 }
+
 h2 {
   color: beige;
   font-family: "Western", sans-serif;
@@ -28,7 +39,7 @@ h2 {
 }
 
 p {
-  color: white;
+  color: beige;
   font-family: "Western", sans-serif;
   font-size: medium;
 }
@@ -37,14 +48,7 @@ audio {
   width: 600px;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: var(--gradient);
-  background-size: 400%;
-  animation: bg-animation 30s infinite;
-}
+
 
 .header_text {
   font-family: "Western", sans-serif;
@@ -66,15 +70,7 @@ body {
   margin-right: 50px;
 }
 
-.buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-bottom: 100px;
-}
+
 
 .button-container {
   display: flex;
@@ -128,11 +124,7 @@ body {
   background-color: #fff;
 }
 
-.gif_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 #loveMessage {
   overflow: hidden;
