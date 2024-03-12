@@ -5,13 +5,9 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="./hacked.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      #text-container {
-        white-space: pre-wrap;
-      }
-    </style>
   </head>
   <body>
+    <canvas id="canv"></canvas>
     <audio controls autoplay loop hidden="">
       <source src="music/FaxMachineSound.mp3" type="audio/mpeg" />
     </audio>
@@ -22,47 +18,39 @@
       </div>
     </div>
     <script>
-      const textElement = document.getElementById("text");
-      const textContainer = document.getElementById("text-container");
-      const text = "1010".repeat(Math.ceil(window.innerWidth / 20));
-      const textLength = text.length;
+      const canvas = document.getElementById("canv");
+      const ctx = canvas.getContext("2d");
 
-      function typeWriter() {
-        if (
-          textContainer.getBoundingClientRect().width >
-          window.innerWidth * 0.9
-        ) {
-          textContainer.style.width = "98vw";
-        }
-        if (
-          textContainer.getBoundingClientRect().width <
-          window.innerWidth * 0.9
-        ) {
-          textContainer.style.width = "auto";
-        }
-        let index = 0;
-        let height = 0;
-        const typingInterval = setInterval(() => {
-          if (height === 20) {
-            clearInterval(typingInterval);
-            showHackAlert();
-            return;
-          }
-          if (index === textLength) {
-            textElement.innerHTML += "<br><br/>";
-            index = 0;
-            height++;
-          }
-          textElement.innerHTML += text.charAt(index);
-          index++;
-        }, 5);
+      const w = (canvas.width = document.body.offsetWidth);
+      const h = (canvas.height = document.body.offsetHeight);
+      const cols = Math.floor(w / 20) + 1;
+      const ypos = Array(cols).fill(0);
+
+      ctx.fillStyle = "#000";
+      ctx.fillRect(0, 0, w, h);
+
+      function matrix() {
+        ctx.fillStyle = "#0001";
+        ctx.fillRect(0, 0, w, h);
+
+        ctx.fillStyle = "#0f0";
+        ctx.font = "15pt monospace";
+
+        ypos.forEach((y, ind) => {
+          const text = String.fromCharCode(Math.random() * 128);
+          const x = ind * 20;
+          ctx.fillText(text, x, y);
+          if (y > 100 + Math.random() * 10000) ypos[ind] = 0;
+          else ypos[ind] = y + 20;
+        });
       }
-      typeWriter();
+      setInterval(matrix, 50);
 
       function showHackAlert() {
         var hackBox = document.getElementById("hackBox");
         hackBox.style.display = "block";
       }
+      showHackAlert();
     </script>
   </body>
 </html>

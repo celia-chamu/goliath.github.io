@@ -5,13 +5,388 @@
          <link rel="stylesheet" href="style.css" 
           
    </head>
-   <body>
-      <div class="musicBox">
-      <div>
-        <h1 class = "header_text"> Welcome David <3 </h1>
-         <p> Pretty Please Press Play </p>
-         <audio controls loop src="music/MoonRide.mp3">
-      </div>
+   <body>        
+      <div class="music">
+         <h1 class = "header_text"> Welcome David <3 </h1>
+<div class="content">
+   <div class="loader">
+       <audio id="audio" src="music/MoonRide.mp3" hidden></audio>
+       <div id="scrn"></div>
+   </div> 
+   <div class="cassette-player">
+       <div class="inner-frame">
+           <!-- speaker  -->
+           <div class="speaker-wrapper">
+               <div class="speaker">
+                   <div class="inner-speaker"></div>
+               </div>
+           <div class="speaker-cover"></div>
+           </div>
+           <!-- //speaker  -->
+           <div class="middle-section">
+   <div class="toppart">
+       <div id="vis" class="flip-box-inner">
+   <div class="counter">
+           <div class="brand-name">
+               <svg width="130px" height="25px">
+               </svg></div>
+           <div class="volume-wrapper">
+       <label for="volume-range">VOLUME</label>&nbsp;&nbsp;
+       <input type="range" class="volume-slider" max="1" min="0" step="0.01" value="0.2" oninput="audioVolume(this.value)">
+   </div> <!-- /volume wrapper -->
+           <div id="counter" class="digits">00:00</div>
+       </div>
+       <!-- visualizer  -->
+       <div class="visbars-wrapper">
+   <div class="visualizer-container"></div>
+   <div class="lines-holder">
+       <svg id="svgbars" width="488" height="60">
+<defs>
+   <linearGradient id="lgoff" x1="5" y1="0" x2="5" y2="50" gradientUnits="userSpaceOnUse">
+       <stop stop-color="rgba(85,255,85,0.3)" offset="0" />
+       <stop stop-color="rgba(238,238,0,0.3)" offset="0.25" />
+       <stop stop-color="rgba(255,85,87,0.3)" offset="0.55" />
+       <stop stop-color="rgba(238,51,51,0.3)" offset="0.75" />
+       <stop stop-color="rgba(255,0,0,0.3)" offset="1" />
+   </linearGradient>
+   
+   <linearGradient id="e" x1="5" y1="0" x2="5" y2="100" gradientUnits="userSpaceOnUse">
+       <stop stop-color="rgba(85,255,85,1)" offset="0" />
+       <stop stop-color="rgba(238,238,0,1)" offset="0.15" />
+       <stop stop-color="rgba(255,85,87,1)" offset="0.35" />
+       <stop stop-color="rgba(221,34,34,1)" offset="0.55" />
+       <stop stop-color="rgba(255,0,0,1)" offset="7" />
+   </linearGradient>
+</defs>
+
+<line stroke="url(#lgoff)" id="baroff0" class="bars-off" x1="5" y1="0" x2="5" y2="100" />
+<line stroke="url(#lgoff)" id="baroff1" class="bars-off" x1="11" y1="0" x2="11" y2="100" />  
+<line stroke="url(#lgoff)" id="baroff2" class="bars-off" x1="17" y1="0" x2="17" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff3" class="bars-off" x1="23" y1="0" x2="23" y2="100" />  
+<line stroke="url(#lgoff)" id="baroff4" class="bars-off" x1="29" y1="0" x2="29" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff5" class="bars-off" x1="35" y1="0" x2="35" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff6" class="bars-off" x1="41" y1="0" x2="41" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff7" class="bars-off" x1="47" y1="0" x2="47" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff8" class="bars-off" x1="53" y1="0" x2="53" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff9" class="bars-off" x1="59" y1="0" x2="59" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff10" class="bars-off" x1="65" y1="0" x2="65" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff11" class="bars-off" x1="71" y1="0" x2="71" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff12" class="bars-off" x1="77" y1="0" x2="77" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff13" class="bars-off" x1="83" y1="0" x2="83" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff14" class="bars-off" x1="89" y1="0" x2="89" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff15" class="bars-off" x1="95" y1="0" x2="95" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff16" class="bars-off" x1="101" y1="0" x2="101" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff17" class="bars-off" x1="107" y1="0" x2="107" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff18" class="bars-off" x1="113" y1="0" x2="113" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff19" class="bars-off" x1="119" y1="0" x2="119" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff20" class="bars-off" x1="125" y1="0" x2="125" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff21" class="bars-off" x1="131" y1="0" x2="131" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff22" class="bars-off" x1="137" y1="0" x2="137" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff23" class="bars-off" x1="143" y1="0" x2="143" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff24" class="bars-off" x1="149" y1="0" x2="149" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff25" class="bars-off" x1="155" y1="0" x2="155" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff26" class="bars-off" x1="161" y1="0" x2="161" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff27" class="bars-off" x1="167" y1="0" x2="167" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff28" class="bars-off" x1="173" y1="0" x2="173" y2="100" /> 
+<line stroke="url(#lgoff)" id="baroff29" class="bars-off" x1="179" y1="0" x2="179" y2="100" /> 
+
+<line stroke="url(#e)" id="bar0" class="singlebars" x1="5" y1="0" x2="5" y2="0"/>
+<line stroke="url(#e)" id="bar1" class="singlebars" x1="11" y1="0" x2="11" y2="0"/>
+<line stroke="url(#e)" id="bar2" class="singlebars" x1="17" y1="0" x2="17" y2="0"/> 
+<line stroke="url(#e)" id="bar3" class="singlebars" x1="23" y1="0" x2="23" y2="0"/>  
+<line stroke="url(#e)" id="bar4" class="singlebars" x1="29" y1="0" x2="29" y2="0"/> 
+<line stroke="url(#e)" id="bar5" class="singlebars" x1="35" y1="0" x2="35" y2="50" /> 
+<line stroke="url(#e)" id="bar6" class="singlebars" x1="41" y1="0" x2="41" y2="50" /> 
+<line stroke="url(#e)" id="bar7" class="singlebars" x1="47" y1="0" x2="47" y2="50" /> 
+<line stroke="url(#e)" id="bar8" class="singlebars" x1="53" y1="0" x2="53" y2="50" /> 
+<line stroke="url(#e)" id="bar9" class="singlebars" x1="59" y1="0" x2="59" y2="50" /> 
+<line stroke="url(#e)" id="bar10" class="singlebars" x1="65" y1="0" x2="65" y2="50" /> 
+<line stroke="url(#e)" id="bar11" class="singlebars" x1="71" y1="0" x2="71" y2="50" /> 
+<line stroke="url(#e)" id="bar12" class="singlebars" x1="77" y1="0" x2="77" y2="50" /> 
+<line stroke="url(#e)" id="bar13" class="singlebars" x1="83" y1="0" x2="83" y2="50" /> 
+<line stroke="url(#e)" id="bar14" class="singlebars" x1="89" y1="0" x2="89" y2="50" /> 
+<line stroke="url(#e)" id="bar15" class="singlebars" x1="95" y1="0" x2="95" y2="50" /> 
+<line stroke="url(#e)" id="bar16" class="singlebars" x1="101" y1="0" x2="101" y2="50" /> 
+<line stroke="url(#e)" id="bar17" class="singlebars" x1="107" y1="0" x2="107" y2="50" /> 
+<line stroke="url(#e)" id="bar18" class="singlebars" x1="113" y1="0" x2="113" y2="50" /> 
+<line stroke="url(#e)" id="bar19" class="singlebars" x1="119" y1="0" x2="119" y2="50" /> 
+<line stroke="url(#e)" id="bar20" class="singlebars" x1="125" y1="0" x2="125" y2="50" /> 
+<line stroke="url(#e)" id="bar21" class="singlebars" x1="131" y1="0" x2="131" y2="50" /> 
+<line stroke="url(#e)" id="bar22" class="singlebars" x1="137" y1="0" x2="137" y2="50" /> 
+<line stroke="url(#e)" id="bar23" class="singlebars" x1="143" y1="0" x2="143" y2="50" /> 
+<line stroke="url(#e)" id="bar24" class="singlebars" x1="149" y1="0" x2="149" y2="50" /> 
+<line stroke="url(#e)" id="bar25" class="singlebars" x1="155" y1="0" x2="155" y2="50" /> 
+<line stroke="url(#e)" id="bar26" class="singlebars" x1="161" y1="0" x2="161" y2="50" /> 
+<line stroke="url(#e)" id="bar27" class="singlebars" x1="167" y1="0" x2="167" y2="50" /> 
+<line stroke="url(#e)" id="bar28" class="singlebars" x1="173" y1="0" x2="173" y2="50" /> 
+<line stroke="url(#e)" id="bar29" class="singlebars" x1="179" y1="0" x2="179" y2="50" /> 
+</svg>
+   </div>
+   </div>
+    <!-- //visualizer  -->
+   </div>  <!-- flip-box-inner  -->
+   </div>
+   <!-- new cassette   -->
+<div class="cassette">
+   
+   <svg class="cassette-svg">
+       <linearGradient id="brand" x1="-20%" y1="0%" x2="100%" y2="60%">
+    <stop offset="0" stop-color="#ff58"/>
+      <stop offset="0.1" stop-color="#ff0"/>
+      <stop offset="0.2" stop-color="#ff0"/>
+      <stop offset="0.65" stop-color="#000"/>
+      <stop offset="0.9" stop-color="#fb0"/>
+      <stop offset="0.99" stop-color="#000"/>
+
+       </linearGradient>
+       <linearGradient id="txt" x1="-20%" y1="0%" x2="100%" y2="60%">
+     <stop offset="0" stop-color="#ff58"/>
+      <stop offset="0.1" stop-color="#f0f"/>
+      <stop offset="0.2" stop-color="#0ff"/>
+      <stop offset="0.3" stop-color="#f0f"/>
+      <stop offset="0.4" stop-color="#f50"/>
+      <stop offset="0.6" stop-color="#f0f"/>
+      <stop offset="0.75" stop-color="#0ff"/>
+       </linearGradient>
+          <linearGradient id="whInner" x1="-20%" y1="0%" x2="100%" y2="125%">
+      <stop offset="0" stop-color="hwb(202 66% 10% / 1)"/>
+      <stop offset="0.44" stop-color="hwb(202 66% 5% / 1)"/>
+      <stop offset="0.48" stop-color="hwb(0 100% 0% / 1)"/>
+      <stop offset="0.52" stop-color="hwb(202 66% 5% / 1)"/>
+     <stop offset="0.65" stop-color="hwb(202 66% 10% / 1)"/>
+       </linearGradient>
+       <g class="pins">
+           <line x1="2" y1="30" x2="12" y2="30"/>
+           <line x1="388" y1="30" x2="398" y2="30"/>
+           <line x1="2" y1="220" x2="12" y2="220"/>
+           <line x1="388" y1="220" x2="398" y2="220"/>
+           <line x1="30" y1="238" x2="30" y2="248"/>
+           <line x1="370" y1="238" x2="370" y2="248"/>
+       </g>
+       <circle class="holes" cx="100" cy="20" r="5"/>
+       <circle class="holes" cx="150" cy="12" r="6"/>
+       
+       <circle class="holes" cx="250" cy="12" r="6"/>
+       <circle class="holes" cx="300" cy="20" r="5"/>
+      
+       <line class="cassette-roof-l" x1="60" y1="0" x2="90" y2="50"/>
+       <line class="cassette-roof-b" x1="90" y1="50" x2="310" y2="50"/>
+       <line class="cassette-roof-r" x1="310" y1="50" x2="340" y2="0"/>
+      
+       <circle class=" tp-runners" cx="30" cy="20" r="12"/>
+       <circle class=" tp-runners-s" cx="30" cy="20" r="5"/>
+       <circle class=" tp-runners" cx="370" cy="20" r="12"/>
+       <circle class=" tp-runners-s" cx="370" cy="20" r="5"/>
+       
+       <circle class="wheel wheel-l" cx="100" cy="130"/>
+       <circle class="wheel-bg" cx="100" cy="130" r="30"/>
+       <circle class="wheel-bgg" cx="100" cy="130" r="24"/>
+       <circle id="leftwheel" class="wheel-inner lw" cx="100" cy="130" r="20"/>
+       
+       <circle class="wheel wheel-r" cx="300" cy="130"/>
+       <circle class="wheel-bg" cx="300" cy="130" r="30"/>
+       <circle class="wheel-bgg" cx="300" cy="130" r="24"/>
+       <circle id="rightwheel" class="wheel-inner rw" cx="300" cy="130" r="20"/>
+       <g class="tape">
+           <line x1="19" y1="17" x2="55" y2="155"/>
+           <line x1="25" y1="10" x2="365" y2="10"/>
+           <line x1="380" y1="17" x2="365" y2="155"/>
+       </g>
+       <g class="msm">
+          
+           <line x1="205" y1="105" x2="205" y2="155"/>
+         
+       </g>
+<g>
+<rect class="outline" x="12" y="58" width="375" height="180" id="lbl" rx="20" mask="url(#lbl-mask)"/>   
+<mask id="lbl-mask">
+<rect x="10" y="50" width="395" height="190" class="rect-mask-vis" rx="10"/>
+<rect x="65" y="95" width="270" height="70" class="rect-mask-invis" rx="35"/>
+
+</mask>
+<rect x="15" y="65" width="360" height="160" id="lbl" mask="url(#lbl-mask)" rx="20" />
+</g>
+<rect x="342" y="116" width="34" height="35" class="b-side" rx="4"/>
+
+<line class="lbl-line" x1="40" y1="210" x2="350" y2="210"/>
+<text class="lbl-txt" x="80" y="203"> Davie's Mix </text>
+   </svg>
+  </div>
+
+<div class="cassette-cover">
+<svg id="cFace" viewBox="0 0 227.01 127.01">
+ <defs>
+   <style>
+.cface-frame {
+   fill: #014a79;
+   fill: url(#frame-gradient2);
+   stroke-width: 3px;
+   stroke: hwb(202.875 24% 44%);
+   stroke-miterlimit: 10;
+}
+</style>
+   <linearGradient id="frame-gradient" x1="41" y1="25.36" x2="187" y2="25.36" gradientUnits="userSpaceOnUse">
+     <stop offset="0" stop-color="#e6e6e6"/>
+     <stop offset="0.02" stop-color="#dce1e4" stop-opacity="0"/>
+     <stop offset="0.12" stop-color="#d1cadd" stop-opacity="0"/>
+     <stop offset="0.23" stop-color="#8cb7d6" stop-opacity="0"/>
+     <stop offset="0.34" stop-color="#6ca6d1" stop-opacity="0"/>
+     <stop offset="0.45" stop-color="#5299aa" stop-opacity="0"/>
+     <stop offset="0.57" stop-color="#3e8eb6" stop-opacity="0"/>
+     <stop offset="0.69" stop-color="#3087a4" stop-opacity="0"/>
+     <stop offset="0.83" stop-color="#308795" stop-opacity="0"/>
+     <stop offset="1" stop-color="#000" stop-opacity="1"/>
+   </linearGradient>
+   <linearGradient id="frame-gradient2" x1="41" y1="25.36" x2="187" y2="85.36" gradientUnits="userSpaceOnUse">
+     <stop offset="0.01" stop-color="hwb(202 8% 96%)"/>
+     <stop offset="0.23" stop-color="hwb(202 4% 46%)"/>
+     <stop offset="0.34" stop-color="hwb(202 4% 37%)"/>
+     <stop offset="0.69" stop-color="hwb(202 4% 56%)"/>
+     <stop offset="0.83" stop-color="hwb(202 4% 64%)"/>
+     <stop offset="0.99" stop-color="hwb(0 0% 100%)"/>
+   </linearGradient>
+ </defs>
+ <path class="cface-frame" d="M221.48.5H3.52a4,4,0,0,0-4,4V122.47a4,4,0,0,0,4,4h218a4,4,0,0,0,4-4V4.53A4,4,0,0,0,221.48.5ZM210.4,108.59a3.26,3.26,0,0,1-3.27,3.27H17.79a3.26,3.26,0,0,1-3.26-3.27V19.37a3.27,3.27,0,0,1,3.26-3.27H207.13a3.27,3.27,0,0,1,3.27,3.27Z" transform="translate(1 0)"/>
+</svg>
+</div>
+           <div class="cassette-bttm">
+               <div class="inner-bttm"></div>
+           </div>
+       </div>
+           <!--   // middle section      -->
+   <div class="ctrls">
+       <div id="btnStop" class="button disabled"><svg class="svg-bttns" id="stopSvg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6 6h12v12H6z"/></svg></div>
+       <div id="btnPlay" class="button disabled"><svg class="svg-bttns" id="playSvg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg></div>
+       <div id="btnPause" class="button disabled"><svg class="svg-bttns" id="pauseSvg" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path id="pausePath" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+       </div>
+       <div class="button btn-settings">
+         <svg class="rec-icon" width="30" height="25">
+                   <circle cx="15" cy="12.5" r="7" fill="#700"/></svg>
+       </div>
+       <div class="button btn-eq" onclick="EQanimation()"><svg class="vis-icon" width="30" height="25">
+                   <line x1="7" y1="5" x2="7" y2="15" stroke="#000"/>
+                   <line x1="12" y1="5" x2="12" y2="10" stroke="#ff5"/>
+                   <line x1="17" y1="5" x2="17" y2="15" stroke="#faa"/>
+                   <line x1="22" y1="5" x2="22" y2="13" stroke="#f22"/>
+               </svg></div>
+   </div>      <!--         /ctrls        -->
+          <!-- speaker  -->
+           <div class="speaker-wrapper">
+               <div class="speaker">
+                   <div class="inner-speaker"></div>
+               </div>
+           <div class="speaker-cover"></div>
+           </div>
+           <!-- //speaker  -->
+       </div> <!--             /inner frame        -->
+   </div> <!--             /cassette-player            -->
+</div> <!--             /content            -->        
+      </div> 
+<script>
+   audio.volume = 0.25;
+   document.querySelector("#btnStop").classList.remove("disabled");
+   document.querySelector("#btnPause").classList.remove("disabled");
+    const number_of_bars = 30;
+    const ctx = new AudioContext();
+    const audioSource = ctx.createMediaElementSource(audio);
+    const analyser = ctx.createAnalyser();
+
+    audioSource.connect(analyser);
+    audioSource.connect(ctx.destination);
+
+    const frequencyData = new Uint8Array(analyser.frequencyBinCount);
+    analyser.getByteFrequencyData(frequencyData);
+    console.log("frequencyData", frequencyData);
+    const container = document.querySelector(".visualiser-container");
+
+    function renderFrame() {
+      analyser.getByteFrequencyData(frequencyData);
+      for (let i = 0; i < number_of_bars; i++) {
+        const index = Math.round((i + 10) * 2.5);
+        const frequency = frequencyData[index];
+        const bar = document.querySelector("#bar" + i);
+        if (!bar) {
+          continue;
+        }
+        const barHeight = Math.max(4, frequency || 0);
+        var yHeight = barHeight / 1.5 + "%";
+        bar.setAttribute("y2", yHeight);
+      }
+      window.requestAnimationFrame(renderFrame);
+    }
+
+    renderFrame();
+    audio.play();
+    wheelsInMotion();
+  
+    document.querySelector("#btnPlay").addEventListener("click", function () {
+  audio.play();
+  document.querySelector("#btnPlay").classList.add("disabled");
+  document.querySelector("#btnStop").classList.remove("disabled");
+  document.querySelector("#btnPause").classList.remove("disabled");
+  wheelsInMotion();
+});
+
+document.querySelector("#btnPause").addEventListener("click", function () {
+  audio.pause();
+  document.querySelector("#btnPlay").classList.remove("disabled");
+  document.querySelector("#btnStop").classList.add("disabled");
+  document.querySelector("#btnPause").classList.add("disabled");
+  wheelsInMotion();
+});
+
+function wheelsInMotion() {
+  var wheels = document.getElementsByClassName("wheel-inner");
+  for (i = 0; i < wheels.length; i++) {
+    wheels[i].classList.toggle("inmotion");
+  }
+}
+function EQanimation() {
+  var vis = document.getElementById("vis");
+  vis.classList.toggle("toggleEQ");
+}
+
+audio.onended = function () {
+  wheelsInMotion();
+  document.querySelector("#btnPlay").classList.remove("disabled");
+  document.querySelector("#btnStop").classList.add("disabled");
+  document.querySelector("#btnPause").classList.add("disabled");
+};
+
+function audioVolume(rngValue) {
+  audio.volume = rngValue;
+}
+
+audio.addEventListener(
+  "timeupdate",
+  function () {
+    var cs = parseInt(audio.currentTime % 60);
+    var cm = parseInt((audio.currentTime / 60) % 60);
+    ss = cs < 10 ? "0" + cs : cs;
+    mm = cm < 10 ? "0" + cm : cm;
+    var countDown = audio.duration - audio.currentTime;
+    var counter = document.getElementById("counter");
+    var minutes = parseInt(countDown / 60, 10);
+    var seconds = parseInt(countDown % 60);
+    var sec = seconds < 10 ? "0" + seconds : seconds;
+    var min = minutes < 10 ? "0" + minutes : minutes;
+    counter.innerHTML = min + ":" + sec;
+  },
+  false
+);
+
+document.querySelector("#btnStop").addEventListener("click", function () {
+  audio.pause();
+  audio.currentTime = 0;
+  var counter = document.getElementById("counter");
+  counter.innerHTML = "00:00";
+  document.querySelector("#btnPlay").classList.remove("disabled");
+  document.querySelector("#btnStop").classList.add("disabled");
+  document.querySelector("#btnPause").classList.add("disabled");
+  wheelsInMotion();
+});
+
+</script>
       <div class="box">
          <div>
              <div class="button-container">
