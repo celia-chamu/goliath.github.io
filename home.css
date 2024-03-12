@@ -57,10 +57,12 @@ body {
 .button-container {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  align-items: center;
+  margin-top: 20px; /* Adjust as needed */
 }
-.button-container button {
-  margin: 0 20px;
+
+.btn {
+  margin: 0 10px; /* Adjust spacing between buttons */
 }
 
 .btn {
