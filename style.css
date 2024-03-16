@@ -126,7 +126,8 @@ height: 50px; background-color: rgba(255,255,10, 0.2); width: 450px;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
-    background-color: rgba(0,0,0, 0.3);
+    background-color: rgb(16, 9, 64);
+    box-shadow: rgb(58, 85, 148);
     /* box-shadow: var(--bx-shadow); */
 }
 .inner-frame {
